@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdkVersion buildConfig.compileSdk
+    defaultConfig {
+        applicationId "com.edvard.poseestimation"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        externalNativeBuild {
+            cmake {
+                arguments  '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+                cppFlags "-std=c++11","-frtti", "-fexceptions"
+            }
+        }
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //Here is the code...
+    buildFeatures {
+        dataBinding = true
+    }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    maven {
+        url 'https://google.bintray.com/tensorflow'
+    }
+    maven { url "https://jitpack.io" }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':openCVLibrary341')
+    implementation deps.kotlin.stdlib.jdk
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+//  implementation(name:'tensorflow-lite', ext:'aar')
+    implementation deps.android.support.appcompatV7
+    implementation deps.android.support.constraintLayout
+    implementation deps.android.support.design
+    implementation deps.android.support.annotations
+    implementation deps.android.support.supportV13
+    implementation deps.timber
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
+    implementation project(path: ':realLib')
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.drawerlayout:drawerlayout:1.0.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    /*implementation ('com.github.nkzawa:socket.io-client:0.4.1'){
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation 'org.json:org.json:chargebee-1.0'*/
+
+    // Firebase 相關
+    implementation 'com.google.firebase:firebase-database:19.4.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    testImplementation deps.junit
+
+    androidTestImplementation(deps.android.test.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}

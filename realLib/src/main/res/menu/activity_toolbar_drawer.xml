@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_course_theme"
+            android:icon="@drawable/ic_course_theme"
+            android:title="@string/course_list" />
+        <item
+            android:id="@+id/nav_my_menu"
+            android:icon="@drawable/ic_my_menu"
+            android:title="@string/my_menu" />
+        <item
+            android:id="@+id/nav_course_history"
+            android:icon="@drawable/ic_history"
+            android:title="@string/course_history" />
+        <item
+            android:id="@+id/nav_my_achievement"
+            android:icon="@drawable/ic_my_achievement"
+            android:title="@string/my_achievement" />
+
+<!--        <item
+        android:title="@string/setting">
+
+            <menu>-->
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_profile"
+                    android:title="@string/profile" />
+                <item
+                    android:id="@+id/nav_change_password"
+                    android:icon="@drawable/ic_change_password"
+                    android:title="@string/change_password" />
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_about"
+                    android:title="@string/about" />
+<!--            </menu>
+
+    </item>-->
+    </group>
+</menu>

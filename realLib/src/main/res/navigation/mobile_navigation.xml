@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_course_theme">
+
+    <fragment
+        android:id="@+id/nav_course_theme"
+        android:name="com.example.aninterface.ui.course.CourseThemeFragment"
+        android:label="@string/course_list"
+        tools:layout="@layout/fragment_coursetheme">
+        <action
+            android:id="@+id/action_nav_course_theme_to_nav_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_course_theme_to_courseListFragment"
+            app:destination="@id/courseListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.aninterface.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_nav_course_theme"
+            app:destination="@id/nav_course_theme" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseListFragment"
+        android:name="com.example.aninterface.ui.course.CourseListFragment"
+        android:label="CourseListFragment" />
+    <!--activity
+        android:id="@+id/toolbarActivity"
+        android:name="com.example.aninterface.ToolbarActivity"
+        android:label="app_bar_toolbar"
+        tools:layout="@layout/app_bar_toolbar" >
+        <action
+            android:id="@+id/action_toolbarActivity_to_nav_home"
+            app:destination="@id/nav_home" />
+    </activity-->
+
+</navigation>

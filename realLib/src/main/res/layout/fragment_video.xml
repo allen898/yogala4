@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="@string/video"
+        android:textColor="@color/brown1"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_video_background"
+        app:layout_constraintEnd_toEndOf="@+id/img_video_background"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/img_video_background" />
+
+    <ImageView
+        android:id="@+id/img_video_background"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:background="@drawable/course_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426"
+        app:srcCompat="@drawable/course_rectangle" />
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_video"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_video_background"
+        app:layout_constraintEnd_toEndOf="@+id/img_video_background"
+        app:layout_constraintStart_toStartOf="@+id/img_video_background"
+        app:layout_constraintTop_toTopOf="@+id/img_video_background"
+        app:videoId="hvtrkKrfP9w"
+        app:autoPlay="true"
+        app:useWebUi="true"
+        />
+
+    <Button
+        android:id="@+id/btn_video_again"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/again"
+        app:layout_constraintStart_toStartOf="@+id/img_video_background"
+        app:layout_constraintTop_toBottomOf="@+id/img_video_background" />
+
+    <Button
+        android:id="@+id/btn_video_start"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/brown1"
+        android:text="@string/video_start"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_video_background"
+        app:layout_constraintTop_toBottomOf="@+id/img_video_background" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

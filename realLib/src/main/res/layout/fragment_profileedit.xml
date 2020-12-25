@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/txt_profile_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/profile_edit"
+        android:textColor="@color/brown1"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_profile_edit_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/img_profile_edit_background"
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:background="@drawable/course_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61"
+        app:srcCompat="@drawable/course_rectangle" />
+
+    <ImageView
+        android:id="@+id/img_profile_edit__picture_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile_edit_background"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/img_profile_edit_background"
+        app:layout_constraintTop_toTopOf="@+id/img_profile_edit_background"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/img_profile_upload_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile_edit__picture_"
+        app:layout_constraintStart_toStartOf="@+id/img_profile_edit__picture_"
+        app:layout_constraintTop_toTopOf="@+id/img_profile_edit__picture_"
+        app:srcCompat="@drawable/uploadnew" />
+
+    <EditText
+        android:id="@+id/edt_edit_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile_edit__picture_"
+        app:layout_constraintStart_toStartOf="@+id/img_profile_edit__picture_"
+        app:layout_constraintTop_toBottomOf="@+id/img_profile_upload_new" />
+
+    <EditText
+        android:id="@+id/edt_edit_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/edt_edit_last_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_last_name" />
+
+    <TextView
+        android:id="@+id/txt_edit_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_edit_last_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_last_name"
+        app:layout_constraintTop_toTopOf="@+id/edt_edit_last_name" />
+
+    <EditText
+        android:id="@+id/edt_edit_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/edt_edit_first_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_first_name" />
+
+    <EditText
+        android:id="@+id/edt_edit_cellphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/edt_edit_email"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_email" />
+
+    <TextView
+        android:id="@+id/txt_edit_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_edit_first_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_last_name" />
+
+    <TextView
+        android:id="@+id/txt_edit_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_edit_email"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_first_name"
+        app:layout_constraintVertical_bias="0.461" />
+
+    <TextView
+        android:id="@+id/txt_edit_cellphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cellphone"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_edit_cellphone"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_cellphone"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_email" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/brown1"
+        android:text="@string/confirm"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_edit_cellphone"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_cellphone"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_cellphone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

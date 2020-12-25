@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_course_introduction_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274"
+        app:srcCompat="@drawable/course_rectangle" />
+
+    <TextView
+        android:id="@+id/txt_course_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_introduction"
+        android:textColor="@color/brown1"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_course_introduction_background"
+        app:layout_constraintEnd_toEndOf="@+id/img_course_introduction_background"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/img_course_introduction_background" />
+
+    <TextView
+        android:id="@+id/txt_course_introduction_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/course_name"
+        android:textColor="@color/brown1"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_course_introduction_background"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="@+id/img_course_introduction_background"
+        app:layout_constraintTop_toTopOf="@+id/img_course_introduction_background" />
+
+    <TextView
+        android:id="@+id/txt_course_introduction_content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/course_introduction"
+        android:textColor="@color/brown1"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/txt_course_introduction_name1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_course_introduction_name1" />
+
+    <Button
+        android:id="@+id/btn_enter_course1"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/brown1"
+        android:text="@string/btn_enter_course1"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/img_btn_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/img_course_introduction_background" />
+
+    <ImageButton
+        android:id="@+id/img_btn_like"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/beige"
+        app:layout_constraintStart_toStartOf="@+id/img_course_introduction_background"
+        app:layout_constraintTop_toBottomOf="@+id/img_course_introduction_background"
+        app:srcCompat="@drawable/favorite_24px" />
+
+    <ImageButton
+        android:id="@+id/img_btn_calendar"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/beige"
+        app:layout_constraintStart_toEndOf="@+id/img_btn_like"
+        app:layout_constraintTop_toBottomOf="@+id/img_course_introduction_background"
+        app:srcCompat="@drawable/calender" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
